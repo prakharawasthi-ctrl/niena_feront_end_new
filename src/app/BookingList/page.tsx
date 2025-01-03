@@ -39,7 +39,7 @@ const BookingList: React.FC = () => {
   const handleDelete = async (name: string, date: string, time: string) => {
     try {
       // Send DELETE request to the backend with name, date, and time for deletion
-      await axios.delete("https://nienabackendnew-production.up.railway.app/api/read", {
+      await axios.delete("https://nienabackendnew-production.up.railway.app/api/delete", {
         data: { name, date, time }, // Send name, date, and time in the request body
       });
 
