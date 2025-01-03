@@ -45,7 +45,7 @@ const BookingForm: React.FC = () => {
 
     if (validateForm()) {
       try {
-        const res = await fetch('http://localhost:5000/api/reservations', {
+        const res = await fetch('https://prismatic-granita-41b36e.netlify.app//api/reservations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
