@@ -45,7 +45,11 @@ const BookingForm: React.FC = () => {
 
     if (validateForm()) {
       try {
+<<<<<<< HEAD
         const res = await fetch('https://prismatic-granita-41b36e.netlify.app//api/reservations', {
+=======
+        const res = await fetch('https://nienabackendnew-production.up.railway.app/api/reservations', {
+>>>>>>> d689c25 (final commit)
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
