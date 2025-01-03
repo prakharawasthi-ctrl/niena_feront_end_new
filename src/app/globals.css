@@ -2,18 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground:#ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background:#ffffff;
     --foreground: #ededed;
   }
 }
 
 body {
-  color:black;
+  color:#ffffff;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -51,7 +51,7 @@ form input[type="number"],
 form input[type="text"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 4px;
 }
 
@@ -63,7 +63,7 @@ form input[type="number"]:invalid {
 form button {
   width: 100%;
   background-color: #007bff;
-  color: white;
+  color: black;
   padding: 10px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -76,7 +76,7 @@ form button:hover {
 /* Navbar styles */
 .navbar {
   background-color: #2563eb; /* Blue background */
-  color: #ffffff; /* White text */
+  color:black; /* White text */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
   padding: 0.5rem 0;
 }
@@ -135,6 +135,37 @@ form button:hover {
 
 
 /* for Booking List */
+.booking-list {
+  font-family: Arial, sans-serif; /* Optional: Set a font family */
+  color: black; /* Set the text color to black */
+}
+
+.booking-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.booking-list th,
+.booking-list td {
+  padding: 8px;
+  text-align: left;
+}
+
+.booking-list button {
+  background-color: #f44336; /* Red button color */
+  color: white; /* Button text color */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.booking-list button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+
 
 
 /* styles.css */
@@ -151,7 +182,7 @@ form button:hover {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  background-color: #f9f9f9;
+  background-color: black;
 }
 
 .booking-list th,
@@ -163,4 +194,29 @@ form button:hover {
 
 .booking-list tr {
   background-color: #fff;
+}
+
+
+
+/* BookingForm component styles */
+form {
+  font-family: Arial, sans-serif; /* Optional: Set a font family */
+  color: black; /* Set text color to black */
+}
+
+label {
+  color: black; /* Ensure the labels are also black */
+}
+
+input {
+  color: black; /* Set the input text color to black */
+}
+
+button {
+  color: white; /* Button text remains white */
+}
+
+/* Optional: Add styles for error messages */
+.text-red-500 {
+  color: red;
 }

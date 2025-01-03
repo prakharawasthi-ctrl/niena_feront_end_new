@@ -5,7 +5,6 @@ import '../globals.css'; // Import the CSS file
 import axios from "axios"; // Import axios for API calls
 
 interface Booking {
-  _id: string;  // Assuming you are using MongoDB and each booking has an "_id"
   name: string;
   date: string;
   time: string;
@@ -35,12 +34,20 @@ const BookingList: React.FC = () => {
     fetchBookings();
   }, []);
 
-  const handleDelete = async (id: string) => {
+  // Handle deletion of a booking
+  const handleDelete = async (name: string, date: string, time: string) => {
     try {
-      // Send a delete request to the backend API
-      await axios.delete(`http://localhost:5000/api/delete/${id}`);
-      // Filter out the deleted booking from the state
-      setBookings((prevBookings) => prevBookings.filter((booking) => booking._id !== id)); 
+      // Send DELETE request to the backend with name, date, and time for deletion
+      await axios.delete("http://localhost:5000/api/delete", {
+        data: { name, date, time }, // Send name, date, and time in the request body
+      });
+
+      // Remove the deleted booking from the state
+      setBookings((prevBookings) =>
+        prevBookings.filter(
+          (booking) => !(booking.name === name && booking.date === date && booking.time === time)
+        )
+      );
       setMessage("Booking deleted successfully.");
     } catch (error) {
       setMessage("Error deleting booking: " + (error.response?.data?.error || "Something went wrong."));
@@ -66,15 +73,17 @@ const BookingList: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
-              <tr key={booking._id}> {/* Keep the existing key */}
+            {bookings.map((booking, index) => (
+              <tr key={booking.name + index}> {/* Using name and index for uniqueness */}
                 <td>{booking.name}</td>
                 <td>{booking.date}</td>
                 <td>{booking.time}</td>
                 <td>{booking.guests}</td>
                 <td>{booking.contact}</td>
                 <td>
-                  <button onClick={() => handleDelete(booking._id)}>Delete</button> {/* Added delete button */}
+                  <button onClick={() => handleDelete(booking.name, booking.date, booking.time)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
