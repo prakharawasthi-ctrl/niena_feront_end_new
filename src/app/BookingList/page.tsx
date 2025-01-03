@@ -20,11 +20,8 @@ const BookingList: React.FC = () => {
     const fetchBookings = async () => {
       try {
         // Fetch data from the backend API
-<<<<<<< HEAD
-        const response = await axios.get("https://prismatic-granita-41b36e.netlify.app/api/read");
-=======
+
         const response = await axios.get("https://nienabackendnew-production.up.railway.app/api/read");
->>>>>>> d689c25 (final commit)
         setBookings(response.data); // Set fetched data into the bookings state
       } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
