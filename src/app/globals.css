@@ -1,0 +1,166 @@
+/* Global Styles */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color:black;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 400px;
+  margin: auto;
+}
+
+form h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+form div {
+  margin-bottom: 16px;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+form input[type="date"],
+form input[type="time"],
+form input[type="number"],
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="text"]:invalid,
+form input[type="number"]:invalid {
+  border: 1px solid red;
+}
+
+form button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+/* Navbar styles */
+.navbar {
+  background-color: #2563eb; /* Blue background */
+  color: #ffffff; /* White text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+  padding: 0.5rem 0;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Flexbox for navbar content */
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #1d4ed8; /* Slightly darker blue */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+  }
+}
+
+
+
+/* for Booking List */
+
+
+/* styles.css */
+.booking-list {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.booking-list h2 {
+  color: #2563eb;
+}
+
+.booking-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.booking-list th,
+.booking-list td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.booking-list tr {
+  background-color: #fff;
+}
